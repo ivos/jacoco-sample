@@ -9,14 +9,13 @@ import java.io.PrintWriter;
 
 public class MyServlet extends HttpServlet {
 
+    private MyService myService = new MyService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setStatus(HttpServletResponse.SC_OK);
         PrintWriter writer = resp.getWriter();
-        writer.println("My servlet response.");
-    }
-
-    public void uncovered() {
-        System.out.println("I am not covered.");
+        String result = myService.get();
+        writer.println(result);
     }
 }
