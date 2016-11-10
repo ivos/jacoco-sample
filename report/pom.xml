@@ -15,6 +15,12 @@
 			<artifactId>jacoco-sample-core</artifactId>
 			<version>0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>net.sample.test</groupId>
+			<artifactId>jacoco-sample-web</artifactId>
+			<version>0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
 		<!--measure coverage by tests in-->
 		<dependency>
 			<groupId>net.sample.test</groupId>
