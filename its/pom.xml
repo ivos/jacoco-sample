@@ -9,17 +9,15 @@
 	</parent>
 	<artifactId>jacoco-sample-its</artifactId>
 	<dependencies>
-		<dependency>
-			<groupId>net.sample.test</groupId>
-			<artifactId>jacoco-sample-core</artifactId>
-			<version>0.1-SNAPSHOT</version>
-		</dependency>
+		<!--run WAR from-->
 		<dependency>
 			<groupId>net.sample.test</groupId>
 			<artifactId>jacoco-sample-web</artifactId>
 			<version>0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
+
+		<!--tests-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -36,40 +34,13 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.8</version>
-				<executions>
-					<execution>
-						<id>wait-for-full-jcc-exec-file-generated</id>
-						<phase>verify</phase>
-						<configuration>
-							<target>
-								<sleep seconds="3"/>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.7.201606060606</version>
 				<executions>
 					<execution>
 						<id>prepare</id>
 						<goals>
 							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>report-aggregate</goal>
 						</goals>
 					</execution>
 				</executions>
